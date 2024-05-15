@@ -1,0 +1,590 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-soft-opacity: #f8f8f8d6;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-gray: #e5e5e5;
+  --vt-c-gray-opacity: #e5e5e5d6;
+
+  --vt-c-black: #181818;
+  --vt-c-black-opacity: #181818d6;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-soft-opacity: var(--vt-c-white-soft-opacity);
+  --color-background-mute: var(--vt-c-white-mute);
+
+
+  --color-background-black: var(--vt-c-black);
+
+  --color-background-gray: var(--vt-c-gray);
+  --color-background-gray-dark: #c1c1c1;
+  --color-background-gray-opacity: var(--vt-c-gray-opacity);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --color-right: #198754;
+  --color-wrong: #dc3545;
+
+  --section-gap: 160px;
+}
+
+/* add if dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background-soft);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.3;
+  /*  overflow: auto !important; */
+  /*
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  */
+  font-family: Corbel, sans-serif;
+  font-size: 22px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.row-flex-right {
+  display: flex;
+  justify-content: flex-end;
+}
+.row-super-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.separator-line {
+  border-top: 2px #6c757d70 solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.separator-line-big {
+  border-top: 2px #6c757d70 solid;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 80%;
+}
+.separator-line-big-under {
+  border-bottom: 2px #6c757d70 solid;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 80%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.loading-content {
+  width: 50px;
+  height: 50px;
+}
+
+h2.auto {
+  width: auto !important;
+}
+h2.normal {
+  font-size: 40px;
+}
+p.normal {
+  text-align: center;
+  font-size: 22px;
+}
+
+.big-button {
+  height: 60px;
+  max-width: 300px;
+  width: 300px;
+  font-size: 28px;
+  line-height: 28px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.big-button-vertical {
+  height: 120px;
+  max-width: 300px;
+  width: 300px;
+  font-size: 28px;
+  line-height: 28px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.big-button-modal {
+  height: 60px;
+  max-width: 300px;
+  width: 300px;
+  font-size: 28px;
+  line-height: 28px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  float:right;
+}
+
+.div-limiter {
+    max-width: 500px;
+    margin: auto;
+}
+
+/*
+.editOrderTab {
+  margin-left: auto;
+  cursor: default;
+}
+.editOrderTab .nav-link {
+  cursor: default;
+  padding: 0px;
+}
+.editOrderTab .form-check{
+  display: flex;
+  justify-content: center;
+}
+.editOrderTab input{
+  cursor: pointer !important;
+  margin-right: 10px !important;
+}
+.editOrderTab .form-check-label{
+  cursor: pointer !important;
+}
+li.editOrderTab {
+  list-style-type: none;
+}
+.editOrderTab.noMargin {
+  margin-left: 0px;
+}
+*/
+.editOrderTab {
+  margin-left: auto;
+  cursor: default;
+  user-select: none;
+}
+.editOrderTab.hidden {
+  visibility: hidden;
+}
+.editOrderTab .nav-link {
+  cursor: default;
+  padding-left: 0px;
+}
+.editOrderTab .form-check{
+  display: flex;
+  justify-content: center;  
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.editOrderTab input{
+  cursor: pointer !important;
+}
+.editOrderTab .form-check-label{
+  cursor: pointer !important;
+  padding-left: 10px;
+}
+li.editOrderTab {
+  list-style-type: none;
+}
+.editOrderTab.noMargin {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.genericTableHeader * {  
+  margin: 0px 5px;
+}
+
+
+.big-arrow-up {  
+  cursor: pointer;
+}
+.big-arrow-down {
+  cursor: pointer;
+}
+.big-base-icons {  
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inlineIcons .btn:last-child {
+  margin-right: 0px;
+}
+
+.inlineIcons .btn {
+  margin-right: 20px;
+}
+
+.base-arrow-up {
+  width: auto;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+.base-arrow-down {
+  width: auto;
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.base-arrow.disabled {
+  color: #ffffff;
+}
+.base-icons {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.base-pointer {
+  cursor: pointer;
+}
+
+.addItemContainer {
+  text-align: right;
+}
+.addItemContainer button.addNew {
+  margin-left: 20px;
+  height: 100%;
+}
+
+.genericItemList {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.genericItemList .item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.genericItemList .item h4 {
+  margin-bottom: 0px;
+}
+.genericItemList.basicView .list-group-item-action {
+  width: 100%
+}
+
+.genericItemList.splitView .list-group-item-action {
+  width: 50%
+}
+.genericItemList.verySplitView .list-group-item-action {
+  width: 25%
+}
+
+.genericTitle {
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.genericTitle h2 {  
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.genericGridIcon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.genericGridIcon .card-body {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.iconSpan {
+  position: relative;
+  display: inline-block;
+}
+
+.iconSpan .icon.good {
+  color: var(--color-right)
+}
+
+.iconSpan .icon.todo {
+  color: #806366;
+}
+
+.iconSpan .icon.inprogress {
+  color: #5967b5;
+}
+/* Tooltip text */
+.iconSpan .iconTooltip {
+  visibility: hidden;
+  width: 120px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  text-align: center;
+  padding: 10px 5px;
+  border-radius: 6px;  
+  font-size: 19px;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid #00000082;
+}
+/* Tooltip text */
+.iconSpan .iconTooltip.big {
+  visibility: hidden;
+  width: 420px;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+  text-align: center;
+  padding: 10px 5px;
+  border-radius: 6px;  
+  font-size: 19px;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid #00000082;
+}
+/* Tooltip text */
+.iconSpan .iconTooltip.danger {
+  width: 300px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.iconSpan:hover .iconTooltip {
+  visibility: visible;
+}
+
+.itemClassification p {
+  font-size: 20px;
+}
+.itemMembers p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-align: right;
+}
+.itemMembers span {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.simulatedCardContainer {
+  height: 100%;
+  margin: 15px;
+}
+.simulatedCard {
+  height: 100%;
+}
+.simulatedBlocker {
+  background-color: black;
+  opacity: 0.1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.simulatedBlocker:hover {
+  opacity: 0.2;
+}
+
+.addItemButton {
+  width: 100%;
+  height: 100px;
+}
+
+.editModuleCardContainer {
+  height: 100%;
+  margin: 0px;
+  margin-right: 10px;
+}
+.editModuleCard {
+  height: 100%;
+  padding: 0px;
+}
+.editModuleCard.clickDisabled .editModuleBlocker {
+  cursor: default;
+}
+.editModuleBlocker {
+  background-color: black;
+  opacity: 0.1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.editModuleBlocker:hover {
+  opacity: 0.2;
+}
+.genericEditButtons {
+  text-align: end;
+}
+.genericEditButtons > :first-child {
+  margin-left: 0px;
+}
+.genericEditButtons > * {
+  margin-left: 10px;
+}
+.genericEditButtons .icon {
+  margin-left: 10px;
+}
+
+.customDangerButton {    
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #bb2d3bd9;
+  --bs-btn-border-color: #b02a37;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #dc3545;
+  --bs-btn-hover-border-color: #dc3545;
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+}
+
+.deletionModal .modal-footer :last-child{
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #bb2d3bd9;
+  --bs-btn-border-color: #b02a37;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #dc3545;
+  --bs-btn-hover-border-color: #dc3545;
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+}
+
+.noActionModal .modal-footer .btn {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #6c757d;
+  --bs-btn-border-color: #6c757d;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #5c636a;
+  --bs-btn-hover-border-color: #565e64;
+  --bs-btn-focus-shadow-rgb: 130, 138, 145;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #565e64;
+  --bs-btn-active-border-color: #51585e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #6c757d;
+  --bs-btn-disabled-border-color: #6c757d;
+}
+
+.saveButton {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #129f5e;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #157347;
+  --bs-btn-hover-border-color: #146c43;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #146c43;
+  --bs-btn-active-border-color: #13653f;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #198754;
+  --bs-btn-disabled-border-color: #198754;
+}
+
+.successButton {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #129f5e;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #157347;
+  --bs-btn-hover-border-color: #146c43;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #146c43;
+  --bs-btn-active-border-color: #13653f;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #198754;
+  --bs-btn-disabled-border-color: #198754;
+}
+
+
+
+.trashIcon {
+  color: #bb2d3bd9;
+}
+
+.trashIcon:hover {
+  color: #dc3545;
+}
+
+.simulator {
+  padding-bottom: 20px;
+}
