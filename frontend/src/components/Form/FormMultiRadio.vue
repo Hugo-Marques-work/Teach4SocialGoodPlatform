@@ -68,7 +68,6 @@ export default defineComponent({
   },
   mounted() {
     this.options = [];
-    this.newOptions = [];
     for(let i = 0; i < this.getNumberOptions(); i++) {
       this.radioOptions.push('');
     }
@@ -107,11 +106,6 @@ export default defineComponent({
     },
     answers(): string[] {
       return this.question.answers;
-    },
-    fields(): {key: string, label: string}[] {
-      let resAnswer = [{ key: 'question', label: '' }];
-      resAnswer.push(...this.newRadioOptions);
-      return resAnswer;
     },
   }
 });
